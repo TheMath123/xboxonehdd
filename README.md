@@ -63,3 +63,40 @@ These can be gotten off your original HDD easily
     └── [ 44M]  updater.xvd
 
 ```
+
+---
+# Step by Step
+1. abrir disk manager.
+2. executar:
+```bash
+sudo python xboxonehdd.py sda
+```
+3. gerou arquivo, execute o mesmo no hd
+```bash
+./mkxboxfs.sh sda
+yes
+```
+4. depois rodar novamente o script:
+```bash
+sudo python xboxonehdd.py sda
+```
+
+5. Agora montar hd do xbox em modo leitura para copiar os arquivos:
+System Update 1
+```bash
+sudo mount -o ro /dev/sdb4/ /home/it/xbox/
+```
+
+Pasta:
+- `A`
+- `B`
+- `updater.xvd`
+
+Copiar e salvar na home, e depois mover para system update do ssd.
+
+Depois de copiar os arquivos para ssd.
+
+6. Rodar novamente o comando.
+```bash
+sudo python xboxonehdd.py sda
+``` 
